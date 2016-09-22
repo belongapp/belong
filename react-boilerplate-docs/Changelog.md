@@ -71,5 +71,5 @@ website!
   @okonet!) to code splitting to cross-OS compatibility is now tested and ready
   to go:
 
-  - We finally added a **[CoC](CODE_OF_CONDUCT.md)**
+  - We finally added a **[CoC](react-boilerplate-docs/CODE_OF_CONDUCT.md)**
   - Windows compatibility has improved massively
