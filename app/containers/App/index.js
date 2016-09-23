@@ -22,10 +22,10 @@ function App(props) {
   return (
     <div className={styles.wrapper}>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - Belong"
+        defaultTitle="Belong"
         meta={[
-          { name: 'description', content: 'A React.js Boilerplate application' },
+          { name: 'description', content: 'A prototype meditation timer' },
         ]}
       />
       <Header location={props.location.pathname} viewer={props.viewer} />

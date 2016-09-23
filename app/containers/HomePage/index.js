@@ -65,18 +65,17 @@ export class HomePage extends React.Component {
     return (
       <article>
         <Helmet
-          title="Home Page"
           meta={[
-            { name: 'description', content: 'A React.js Boilerplate application homepage' },
+            { name: 'description', content: 'A prototype meditation timer' },
           ]}
         />
         <div>
           <section className={styles.centered}>
             <H2>
-              <FormattedMessage {...messages.startProjectHeader} />
+              <FormattedMessage {...messages.homePageHeader} />
             </H2>
             <p>
-              <FormattedMessage {...messages.startProjectMessage} />
+              <FormattedMessage {...messages.homePageSubHeader} />
             </p>
           </section>
           <section>

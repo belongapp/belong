@@ -21,13 +21,8 @@
   },
   {
     "id": "boilerplate.components.Footer.author.message",
-    "defaultMessage": "Made with love by {author}.",
-    "message": "Made with love by {author}."
-  },
-  {
-    "id": "boilerplate.components.Footer.license.message",
-    "defaultMessage": "This project is licensed under the MIT license.",
-    "message": "This project is licensed under the MIT license."
+    "defaultMessage": "Made with ღ by {author}.",
+    "message": "Made with ღ by {author}."
   },
   {
     "id": "boilerplate.containers.FeaturePage.css.header",

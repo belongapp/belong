@@ -6,7 +6,7 @@ import A from 'components/A';
 import Img from 'components/Img';
 import NavLink from 'components/NavLink';
 import ViewerWidget from 'containers/ViewerWidget';
-import Banner from './banner.jpg';
+import Banner from './banner.png';
 import messages from './messages';
 import styles from './styles.css';
 
@@ -30,7 +30,7 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
     return (
       <div>
         <A className={styles.logoWrapper} href="https://twitter.com/mxstbr">
-          <Img className={styles.logo} src={Banner} alt="react-boilerplate - Logo" />
+          <Img className={styles.logo} src={Banner} alt="belong - Logo" />
         </A>
         <div className={styles.navbar}>
           <HeaderLink to="/" msg={messages.home} />

@@ -8,17 +8,6 @@ import Footer from '../index';
 import A from 'components/A';
 
 describe('<Footer />', () => {
-  it('should render the copyright notice', () => {
-    const renderedComponent = shallow(
-      <Footer />
-    );
-    expect(renderedComponent.contains(
-      <section>
-        <FormattedMessage {...messages.licenseMessage} />
-      </section>
-    )).toEqual(true);
-  });
-
   it('should render the credits', () => {
     const renderedComponent = shallow(<Footer />);
     expect(renderedComponent.contains(
@@ -26,7 +15,7 @@ describe('<Footer />', () => {
         <FormattedMessage
           {...messages.authorMessage}
           values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
+            author: <A href="https://github.com/belongapp/belong">Belong</A>,
           }}
         />
       </section>

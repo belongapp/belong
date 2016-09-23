@@ -1,4 +1,15 @@
-# Belong - prototype meditation timer
+<img src="https://raw.githubusercontent.com/sedubois/belong-brand/master/assets/banner.png" alt="banner" align="center" />
+
+<br />
+
+<div align="center"><h1>Belong</h1></div>
+<div align="center"><strong>Prototype meditation timer</strong></div>
+
+<br />
+
+<div align="center">
+  <sub>Made with ❤︎ by <a href="https://twitter.com/semdubois">Sébastien Dubois</a></sub>
+</div>
 
 ## Credit
 
