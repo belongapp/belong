@@ -4,6 +4,7 @@
 // about the code splitting business
 import { getAsyncInjectors } from './utils/asyncInjectors';
 import { requireAuth } from 'containers/Viewer/lib';
+import { ViewerQueries } from './relay/queries';
 
 const errorLoading = (err) => {
   console.error('Dynamic page loading failed', err); // eslint-disable-line no-console
@@ -49,6 +50,15 @@ export default function createRoutes(store) {
       },
       // for example's sake, require authentication to see /features
       onEnter: requireAuth,
+    }, {
+      path: '/player',
+      name: 'player',
+      getComponent(nextState, cb) {
+        System.import('containers/MediaPlayer')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+      queries: ViewerQueries,
     }, {
       path: '/login',
       name: 'login',
