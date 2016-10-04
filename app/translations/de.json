@@ -10,6 +10,16 @@
     "message": ""
   },
   {
+    "id": "boilerplate.components.Header.home",
+    "defaultMessage": "Home",
+    "message": ""
+  },
+  {
+    "id": "boilerplate.components.Header.features",
+    "defaultMessage": "Features",
+    "message": ""
+  },
+  {
     "id": "boilerplate.components.Footer.author.message",
     "defaultMessage": "Made with love by {author}.",
     "message": "Mit Liebe gemacht von {author}."
@@ -42,11 +52,6 @@
   {
     "id": "boilerplate.containers.FeaturePage.header",
     "defaultMessage": "Features",
-    "message": ""
-  },
-  {
-    "id": "boilerplate.containers.FeaturePage.home",
-    "defaultMessage": "Home",
     "message": ""
   },
   {
@@ -110,11 +115,6 @@
     "message": "Unidirectional data flow erlaubt uns alle Änderungen ihrer Applikation zu loggen und time travel debugging einzusetzen."
   },
   {
-    "id": "boilerplate.containers.HomePage.features.Button",
-    "defaultMessage": "Features",
-    "message": ""
-  },
-  {
     "id": "boilerplate.containers.HomePage.start_project.header",
     "defaultMessage": "Start your next react project in seconds",
     "message": "Beginnen Sie Ihr nächstes React Projekt in Sekunden"
@@ -143,10 +143,5 @@
     "id": "boilerplate.containers.NotFoundPage.header",
     "defaultMessage": "Page not found.",
     "message": "Seite nicht gefunden."
-  },
-  {
-    "id": "boilerplate.containers.NotFoundPage.home",
-    "defaultMessage": "Home",
-    "message": ""
   }
 ]

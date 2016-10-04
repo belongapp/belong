@@ -1,11 +1,24 @@
 import React from 'react';
 import Relay from 'react-relay';
+import { FormattedMessage } from 'react-intl';
 
 import A from 'components/A';
 import Img from 'components/Img';
+import NavLink from 'components/NavLink';
 import ViewerWidget from 'containers/ViewerWidget';
 import Banner from './banner.jpg';
+import messages from './messages';
 import styles from './styles.css';
+
+const HeaderLink = ({ to, msg }) => (
+  <NavLink to={to} className={styles.navlink} activeClassName={styles.isAtLocation}>
+    <FormattedMessage {...msg} />
+  </NavLink>
+);
+HeaderLink.propTypes = {
+  to: React.PropTypes.string.isRequired,
+  msg: React.PropTypes.object.isRequired,
+};
 
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
@@ -19,7 +32,9 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
         <A className={styles.logoWrapper} href="https://twitter.com/mxstbr">
           <Img className={styles.logo} src={Banner} alt="react-boilerplate - Logo" />
         </A>
-        <div className={styles.buttons}>
+        <div className={styles.navbar}>
+          <HeaderLink to="/" msg={messages.home} />
+          <HeaderLink to="/features" msg={messages.features} />
           {this.props.location !== '/login' && <ViewerWidget viewer={this.props.viewer} />}
         </div>
       </div>

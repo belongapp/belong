@@ -9,6 +9,6 @@ describe('<Header />', () => {
     const renderedComponent = shallow(
       <Header />
     );
-    expect(renderedComponent.find('Img').length).toEqual(1);
+    expect(renderedComponent.find('A').length).toEqual(1);
   });
 });
