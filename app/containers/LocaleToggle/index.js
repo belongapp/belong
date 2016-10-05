@@ -10,16 +10,13 @@ import { selectLocale } from '../LanguageProvider/selectors';
 import { changeLocale } from '../LanguageProvider/actions';
 import { appLocales } from '../../i18n';
 import { createSelector } from 'reselect';
-import styles from './styles.css';
 import messages from './messages';
 import Toggle from 'components/Toggle';
 
 export class LocaleToggle extends React.Component { // eslint-disable-line
   render() {
     return (
-      <div className={styles.localeToggle}>
-        <Toggle values={appLocales} messages={messages} onToggle={this.props.onLocaleToggle} />
-      </div>
+      <Toggle values={appLocales} messages={messages} onToggle={this.props.onLocaleToggle} />
     );
   }
 }

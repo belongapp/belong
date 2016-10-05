@@ -1,14 +1,12 @@
 .buttonWrapper {
   width: 100%;
   text-align: center;
-  margin: 4em 0;
 }
 
 .button {
   display: inline-block;
   box-sizing: border-box;
   padding: 0.25em 2em;
-  margin: 0;
   text-decoration: none;
   border-radius: 4px;
   -webkit-font-smoothing: antialiased;

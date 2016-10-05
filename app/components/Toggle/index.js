@@ -7,7 +7,6 @@
 import React from 'react';
 
 // import { FormattedMessage } from 'react-intl';
-import styles from './styles.css';
 import ToggleOption from '../ToggleOption';
 
 function Toggle(props) {  // eslint-disable-line react/prefer-stateless-function
@@ -21,7 +20,7 @@ function Toggle(props) {  // eslint-disable-line react/prefer-stateless-function
   }
 
   return (
-    <select onChange={props.onToggle} className={styles.toggle}>
+    <select onChange={props.onToggle}>
       {content}
     </select>
   );
