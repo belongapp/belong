@@ -3,7 +3,7 @@ import Relay from 'react-relay';
 
 import NavLink from 'components/NavLink';
 import UserBadge from 'containers/UserBadge';
-import styles from './styles.css';
+import previewCardStyles from 'components/PreviewCard/styles.css';
 
 class UserPreview extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
@@ -24,7 +24,7 @@ class UserPreview extends React.Component { // eslint-disable-line react/prefer-
 
     return (
       <NavLink
-        className={this.props.className || styles.PreviewCard}
+        className={this.props.className || previewCardStyles.PreviewCard}
         to={`/${slug}`}
       >
         <UserBadge user={this.props.user} />

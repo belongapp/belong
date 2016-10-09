@@ -4,6 +4,7 @@
 // about the code splitting business
 import { getAsyncInjectors } from './utils/asyncInjectors';
 import { ViewerQueries } from './relay/queries';
+import { requireAuth } from 'containers/Viewer/lib';
 
 const errorLoading = (err) => {
   console.error('Dynamic page loading failed', err); // eslint-disable-line no-console
@@ -26,15 +27,6 @@ export default function createRoutes(store) {
           .then(loadModule(cb))
           .catch(errorLoading);
       },
-    }, {
-      path: '/player',
-      name: 'player',
-      getComponent(nextState, cb) {
-        System.import('containers/MediaPlayer')
-          .then(loadModule(cb))
-          .catch(errorLoading);
-      },
-      queries: ViewerQueries,
     }, {
       path: '/login',
       name: 'login',
@@ -61,6 +53,33 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
+    }, {
+      path: '/discover',
+      name: 'discover',
+      getComponent(nextState, cb) {
+        System.import('containers/DiscoverPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+      queries: ViewerQueries,
+    }, {
+      path: '/:slug',
+      name: 'profile',
+      getComponent(nextState, cb) {
+        System.import('containers/ProfilePage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+      queries: ViewerQueries,
+    }, {
+      path: '/track/:trackId',
+      name: 'track',
+      getComponent(nextState, cb) {
+        System.import('containers/TrackPlayer')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+      queries: ViewerQueries,
     }, {
       path: '*',
       name: 'notfound',

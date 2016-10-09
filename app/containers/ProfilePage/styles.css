@@ -1,0 +1,19 @@
+.Wrapper {
+  margin: 0 1em;
+}
+
+.Header {
+  display: inline-flex;
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.Header > p {
+  margin: auto 1em;
+  font-size: larger;
+  font-weight: bold;
+  text-align: right;
+  border-bottom: 1px solid #FFC500;
+  width: inherit;
+}

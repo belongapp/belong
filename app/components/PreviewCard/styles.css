@@ -1,5 +1,6 @@
 .PreviewCard {
   width: 13em;
+  margin: 0.5em;
   padding-top: 1.5em;
   border-radius: 5px;
   box-shadow: 0 1px 3px #A78100;

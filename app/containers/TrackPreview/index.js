@@ -1,33 +1,28 @@
 import React from 'react';
 import Relay from 'react-relay';
-import ReactPlayer from 'react-player';
-import H2 from 'components/H2';
+
+import NavLink from 'components/NavLink';
 import styles from './styles.css';
+import previewCardStyles from 'components/PreviewCard/styles.css';
 
 class Track extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
     track: React.PropTypes.shape({
+      id: React.PropTypes.string.isRequired,
       title: React.PropTypes.string.isRequired,
-      url: React.PropTypes.string.isRequired,
     }).isRequired,
   };
 
   render() {
-    const {
-      title,
-      url,
-    } = this.props.track;
-
     return (
-      <section className={styles.Wrapper}>
-        <H2>{title}</H2>
-        <ReactPlayer
-          className={styles.Player}
-          url={url}
-          controls
-        />
-      </section>
+      <NavLink
+        to={`/track/${this.props.track.id}`}
+        className={`${previewCardStyles.PreviewCard} ${styles.Wrapper}`}
+      >
+        <p className={styles.PlayButton}>▶</p>
+        <p>{this.props.track.title}</p>
+      </NavLink>
     );
   }
 }
@@ -35,8 +30,8 @@ class Track extends React.Component { // eslint-disable-line react/prefer-statel
 export default Relay.createContainer(Track, {
   fragments: {
     track: () => Relay.QL`fragment on Track {
+      id
       title
-      url
     }`,
   },
 });
