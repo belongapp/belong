@@ -24,7 +24,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
           ]}
         />
         <div>
-          <section className={`${styles.textSection} ${styles.centered}`}>
+          <section className={styles.centered}>
             <H2>
               <FormattedMessage {...messages.homePageHeader} />
             </H2>

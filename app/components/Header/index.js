@@ -2,11 +2,8 @@ import React from 'react';
 import Relay from 'react-relay';
 import { FormattedMessage } from 'react-intl';
 
-import A from 'components/A';
-import Img from 'components/Img';
 import NavLink from 'components/NavLink';
 import ViewerWidget from 'containers/ViewerWidget';
-import Banner from './banner.png';
 import messages from './messages';
 import styles from './styles.css';
 
@@ -28,14 +25,10 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
 
   render() {
     return (
-      <div>
-        <A className={styles.logoWrapper} href="https://twitter.com/mxstbr">
-          <Img className={styles.logo} src={Banner} alt="belong - Logo" />
-        </A>
-        <div className={styles.navbar}>
-          <HeaderLink to="/" msg={messages.home} />
-          {this.props.location !== '/login' && <ViewerWidget viewer={this.props.viewer} />}
-        </div>
+      <div className={styles.navbar}>
+        <HeaderLink to="/" msg={messages.home} />
+        <HeaderLink to="/discover" msg={messages.discover} />
+        {this.props.location !== '/login' && <ViewerWidget viewer={this.props.viewer} />}
       </div>
     );
   }

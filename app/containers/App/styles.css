@@ -6,6 +6,15 @@ body {
   width: 100%;
 }
 
+a {
+  color: #A78100;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #3B2E00;
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

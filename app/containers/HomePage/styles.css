@@ -1,11 +1,3 @@
-.textSection {
-  margin: 3em auto;
-}
-
-.textSection:first-child {
-  margin-top: 0;
-}
-
 .centered {
   text-align: center;
 }
@@ -14,4 +6,8 @@ p,
 label {
   font-family: Georgia, Times, 'Times New Roman', serif;
   line-height: 1.5em;
+}
+
+h2 {
+  color: #FFC500;
 }

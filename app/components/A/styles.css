@@ -1,7 +1,11 @@
 .link {
-  color: #41ADDD;
+  color: #FF5600;
+}
+
+.link:visited {
+  color: #A73800;
 }
 
 .link:hover {
-  color: #6CC0E5;
+  color: #3B1400;
 }

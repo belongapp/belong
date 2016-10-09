@@ -17,11 +17,15 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 16px;
-  border: 2px solid #41ADDD;
-  color: #41ADDD;
+  border: 2px solid #FFDC65;
+  color: #FFC500;
+}
+
+.button:hover {
+  background: #FFFDF5;
 }
 
 .button:active {
-  background: #41ADDD;
-  color: #FFF;
+  background: #A78100;
+  color: #FFFDF5;
 }
