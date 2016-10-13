@@ -1,5 +1,5 @@
 import React from 'react';
-import Relay from 'react-relay';
+// import Relay from 'react-relay';
 import Track from 'containers/Track';
 
 class MediaPlayer extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -19,19 +19,22 @@ class MediaPlayer extends React.Component { // eslint-disable-line react/prefer-
   }
 }
 
-export default Relay.createContainer(MediaPlayer, {
-  fragments: {
-    viewer: () => Relay.QL`
-      fragment on Viewer {
-        allTracks(first: 1000000) {
-          edges {
-            node {
-              id
-              ${Track.getFragment('track')}
-            }
-          }
-        }
-      }
-    `,
-  },
-});
+// TODO use apollo
+export default MediaPlayer;
+
+// export default Relay.createContainer(MediaPlayer, {
+//   fragments: {
+//     viewer: () => Relay.QL`
+//       fragment on Viewer {
+//         allTracks(first: 1000000) {
+//           edges {
+//             node {
+//               id
+//               ${Track.getFragment('track')}
+//             }
+//           }
+//         }
+//       }
+//     `,
+//   },
+// });

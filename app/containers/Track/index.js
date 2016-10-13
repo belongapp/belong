@@ -1,5 +1,5 @@
 import React from 'react';
-import Relay from 'react-relay';
+// import Relay from 'react-relay';
 import ReactPlayer from 'react-player';
 import H2 from 'components/H2';
 import styles from './styles.css';
@@ -32,11 +32,14 @@ class Track extends React.Component { // eslint-disable-line react/prefer-statel
   }
 }
 
-export default Relay.createContainer(Track, {
-  fragments: {
-    track: () => Relay.QL`fragment on Track {
-      title
-      url
-    }`,
-  },
-});
+// TODO use apollo
+export default Track;
+
+// export default Relay.createContainer(Track, {
+//   fragments: {
+//     track: () => Relay.QL`fragment on Track {
+//       title
+//       url
+//     }`,
+//   },
+// });

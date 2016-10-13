@@ -11,11 +11,12 @@ import createReducer from './reducers';
 const sagaMiddleware = createSagaMiddleware();
 const devtools = window.devToolsExtension || (() => (noop) => noop);
 
-export default function configureStore(initialState = {}, history) {
+export default function configureStore(initialState = {}, apolloClient, history) {
   // Create the store with two middlewares
   // 1. sagaMiddleware: Makes redux-sagas work
   // 2. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [
+    apolloClient.middleware(),
     sagaMiddleware,
     routerMiddleware(history),
   ];
