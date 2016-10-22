@@ -26,6 +26,7 @@ import { useScroll } from 'react-router-scroll';
 import configureStore from './store';
 import useRelay from 'react-router-relay';
 import Relay from './relay';
+import { ViewerQueries } from './relay/queries';
 
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
@@ -75,6 +76,7 @@ import createRoutes from './routes';
 const rootRoute = {
   component: App,
   childRoutes: createRoutes(store),
+  queries: ViewerQueries,
 };
 
 const render = (messages) => {

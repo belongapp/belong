@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import Relay from 'react-relay';
 import Helmet from 'react-helmet';
 
 // Import the CSS reset, which HtmlWebpackPlugin transfers to the build folder
@@ -27,7 +28,7 @@ function App(props) {
           { name: 'description', content: 'A React.js Boilerplate application' },
         ]}
       />
-      <Header location={props.location.pathname} />
+      <Header location={props.location.pathname} viewer={props.viewer} />
       {React.Children.toArray(props.children)}
       <Footer />
     </div>
@@ -35,10 +36,19 @@ function App(props) {
 }
 
 App.propTypes = {
+  viewer: React.PropTypes.object.isRequired,
   children: React.PropTypes.node,
   location: React.PropTypes.shape({
     pathname: React.PropTypes.string.isRequired,
   }).isRequired,
 };
 
-export default App;
+export default Relay.createContainer(App, {
+  fragments: {
+    viewer: () => Relay.QL`
+      fragment on Viewer {
+        ${Header.getFragment('viewer')}
+      }
+    `,
+  },
+});

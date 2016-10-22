@@ -5,18 +5,22 @@
 
 import { call, put, take } from 'redux-saga/effects';
 import { browserHistory } from 'react-router';
-import { loginCallback, getProfile } from './lib';
+import { updateNetworkLayer } from 'relay/index';
+import { storeToken } from 'containers/Viewer/lib';
+import { loginCallback, getProfile, createUserIfNeededAndSignIn } from './lib';
 import { loginCallbackRequest, loginCallbackError } from './actions';
-import { setViewer } from 'containers/Viewer/actions';
 
 function* loginCallbackSaga() {
   try {
-    const { nextPathname } = yield call(loginCallback);
-    const profile = yield call(getProfile);
-    yield put(setViewer(profile));
+    const { authToken, nextPathname } = yield call(loginCallback);
+    const profile = yield call(getProfile, authToken);
+    const viewerToken = yield createUserIfNeededAndSignIn(authToken, profile);
+    storeToken(viewerToken);
+    updateNetworkLayer(viewerToken);
     return nextPathname;
   } catch (err) {
     // TODO display error to user
+    console.log('login error!', err);
     yield put(loginCallbackError(err));
     return '/';
   }

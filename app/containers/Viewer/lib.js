@@ -1,5 +1,5 @@
 const AUTH_SECRET = 'auth-secret';
-const AUTH_TOKEN = 'auth-token';
+const VIEWER_TOKEN = 'viewer-token';
 
 export function requireAuth(nextState, replace) {
   if (!loggedIn()) {
@@ -10,6 +10,7 @@ export function requireAuth(nextState, replace) {
   }
 }
 
+// TODO check in backend that token is valid (e.g user may have been deleted)
 export function loggedIn() {
   return !!getToken();
 }
@@ -33,13 +34,13 @@ export function popSecret() {
 }
 
 export function storeToken(token) {
-  localStorage.setItem(AUTH_TOKEN, token);
+  localStorage.setItem(VIEWER_TOKEN, token);
 }
 
 export function getToken() {
-  return localStorage.getItem(AUTH_TOKEN);
+  return localStorage.getItem(VIEWER_TOKEN);
 }
 
-export function removeToken() {
-  localStorage.removeItem(AUTH_TOKEN);
+export function clearStorage() {
+  localStorage.clear();
 }

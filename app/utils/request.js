@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+import Relay from 'react-relay';
 
 /**
  * Parses the JSON returned by a network request
@@ -42,4 +43,22 @@ export default function request(url, options) {
     .then(parseJSON)
     .then((data) => ({ data }))
     .catch((err) => ({ err }));
+}
+
+/**
+ * Mutates the Relay backend with the provided mutation.
+ *
+ * @param mutation     A Relay mutation
+ * @returns {Promise}
+ */
+export function mutate(mutation) {
+  return new Promise((resolve, reject) => {
+    Relay.Store.commitUpdate(
+      mutation,
+      {
+        onSuccess: resolve,
+        onFailure: (tx) => reject(tx.getError()),
+      }
+    );
+  });
 }
