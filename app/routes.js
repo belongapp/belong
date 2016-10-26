@@ -3,7 +3,6 @@
 // See http://blog.mxstbr.com/2016/01/react-apps-with-pages for more information
 // about the code splitting business
 import { getAsyncInjectors } from './utils/asyncInjectors';
-import { requireAuth } from 'containers/Viewer/lib';
 import { ViewerQueries } from './relay/queries';
 
 const errorLoading = (err) => {
@@ -16,40 +15,17 @@ const loadModule = (cb) => (componentModule) => {
 
 export default function createRoutes(store) {
   // create reusable async injectors using getAsyncInjectors factory
-  const { injectReducer, injectSagas } = getAsyncInjectors(store);
+  const { /* injectReducer, */ injectSagas } = getAsyncInjectors(store);
 
   return [
     {
       path: '/',
       name: 'home',
       getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          System.import('containers/HomePage/reducer'),
-          System.import('containers/HomePage/sagas'),
-          System.import('containers/HomePage'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
-        importModules.then(([reducer, sagas, component]) => {
-          injectReducer('home', reducer.default);
-          injectSagas(sagas.default);
-
-          renderRoute(component);
-        });
-
-        importModules.catch(errorLoading);
-      },
-    }, {
-      path: '/features',
-      name: 'features',
-      getComponent(nextState, cb) {
-        System.import('containers/FeaturePage')
+        System.import('containers/HomePage')
           .then(loadModule(cb))
           .catch(errorLoading);
       },
-      // for example's sake, require authentication to see /features
-      onEnter: requireAuth,
     }, {
       path: '/player',
       name: 'player',
