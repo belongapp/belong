@@ -28,7 +28,10 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
       <div className={styles.navbar}>
         <HeaderLink to="/" msg={messages.home} />
         <HeaderLink to="/discover" msg={messages.discover} />
-        {this.props.location !== '/login' && <ViewerWidget viewer={this.props.viewer} />}
+        {this.props.location !== '/login' && <ViewerWidget
+          viewer={this.props.viewer}
+          className={`${styles.navlink} ${styles.alignRight}`}
+        />}
       </div>
     );
   }

@@ -32,3 +32,7 @@
 .navlink.isAtLocation {
   padding-bottom: 1.2em;
 }
+
+.alignRight {
+  right: 0;
+}

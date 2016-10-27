@@ -1,6 +1,6 @@
 import React from 'react';
 import Relay from 'react-relay';
-import { Link } from 'react-router';
+import NavLink from 'components/NavLink';
 import UserBadge from 'components/UserBadge';
 import styles from './styles.css';
 
@@ -21,10 +21,10 @@ class UserWidget extends React.Component { // eslint-disable-line react/prefer-s
     } = this.props.user;
 
     return (
-      <Link to={slug} className={styles.link}>
+      <NavLink to={slug} className={styles.link}>
         <UserBadge picture={picture} />
         <span className={styles.UserName}>{givenName}</span>
-      </Link>
+      </NavLink>
     );
   }
 }

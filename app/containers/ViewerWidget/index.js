@@ -8,6 +8,7 @@ import buttonStyles from 'components/Button/styles.css';
 
 class ViewerWidget extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
+    className: React.PropTypes.string,
     viewer: React.PropTypes.shape({
       user: React.PropTypes.object,
     }).isRequired,
@@ -15,7 +16,7 @@ class ViewerWidget extends React.Component { // eslint-disable-line react/prefer
 
   render() {
     return (
-      <div>
+      <span className={this.props.className}>
         {this.props.viewer.user && <UserWidget user={this.props.viewer.user} />}
         {loggedOut() && <Link to="/login" className={`${buttonStyles.button} ${styles.loginButton}`}>
           Log In
@@ -28,7 +29,7 @@ class ViewerWidget extends React.Component { // eslint-disable-line react/prefer
             </Link>
           </div>
         </div>}
-      </div>
+      </span>
     );
   }
 }
