@@ -1,5 +1,6 @@
 import React from 'react';
 import { createAndShow, LOCK_CONTAINER_ID } from './lib';
+import { clearStorage } from 'containers/Viewer/lib';
 import styles from './styles.css';
 
 export class Login extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -14,6 +15,10 @@ export class Login extends React.Component { // eslint-disable-line react/prefer
   componentDidMount() {
     const nextPathname = this.props.location.state && this.props.location.state.nextPathname;
     createAndShow(nextPathname || '/');
+  }
+
+  componentWillUnmount() {
+    clearStorage();
   }
 
   render() {

@@ -43,4 +43,5 @@ export function getToken() {
 
 export function clearStorage() {
   localStorage.clear();
+  sessionStorage.clear();
 }
