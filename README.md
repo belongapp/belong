@@ -1,3 +1,7 @@
+**Please note! This repository is superseded by https://github.com/relatenow/relate**
+
+<br />
+
 <img src="https://raw.githubusercontent.com/sedubois/belong-brand/master/assets/banner.png" alt="banner" align="center" />
 
 <br />
